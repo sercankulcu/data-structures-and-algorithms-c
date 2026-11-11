@@ -1,0 +1,23 @@
+name: build
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  bolum:
+    name: Bolum programlari · ${{ matrix.cc }}${{ matrix.san == '1' && ' + asan' || '' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - cc: gcc
+            san: '0'
+          - cc: clang
+            san: '1'
+    env:
+      CC: ${{ matrix.cc }}
+      SAN: ${{ matrix.san }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Derle ve calistir
+        run: sh ci/build.sh
