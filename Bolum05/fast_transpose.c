@@ -36,20 +36,20 @@ void fast_transpose(term M[], term T[]) {
  * parca asagida isaretlidir */
 void fast_transpose_tek(term M[], term T[]) {
   int i, j, pos, nc = M[0].col, nt = M[0].value;
-  int cnt[MAX_COL];
+  int row_terms[MAX_COL];
   T[0].row = nc;  T[0].col = M[0].row;  T[0].value = nt;
   if (nt <= 0) return;
-  for (i = 0; i < nc; i++) cnt[i] = 0;
-  for (i = 1; i <= nt; i++) cnt[M[i].col]++;
+  for (i = 0; i < nc; i++) row_terms[i] = 0;
+  for (i = 1; i <= nt; i++) row_terms[M[i].col]++;
   /* --- slayttaki parca --- */
   /* row_terms'ü yerinde start_pos'a çevir */
   for (i = 0, pos = 1; i < nc; i++) {
-    int c = cnt[i];      /* bu sütundaki terim sayısı */
-    cnt[i] = pos;        /* artık başlangıç konumu */
+    int c = row_terms[i];  /* bu sütundaki terim sayısı */
+    row_terms[i] = pos;  /* artık başlangıç konumu */
     pos += c;
   }
   for (i = 1; i <= nt; i++) {
-    j = cnt[M[i].col]++;
+    j = row_terms[M[i].col]++;
     T[j].row = M[i].col;  T[j].col = M[i].row;
     T[j].value = M[i].value;
   }

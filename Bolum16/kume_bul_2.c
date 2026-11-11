@@ -1,16 +1,16 @@
-/* Azaltma kurali (yol kisaltma, Kume_bul_2): once kok bulunur, sonra yoldaki
+/* Azaltma kurali (yol kisaltma, Kume_Bul_2): once kok bulunur, sonra yoldaki
  * her dugum dogrudan koke baglanir.
  * Notlardaki ornek: agirlikli izlemenin sonundaki agac
- * ata = {-8, 0, 0, 2, 0, 4, 4, 6}; sirayla Kume_bul_2(7), Kume_bul_2(7),
- * Kume_bul_2(5).
- * Slaytlar: "Kume_bul_2", "Izleme: Kume_bul_2(7)",
- * "Izleme: Kume_bul_2 (devam)". */
+ * ata = {-8, 0, 0, 2, 0, 4, 4, 6}; sirayla Kume_Bul_2(7), Kume_Bul_2(7),
+ * Kume_Bul_2(5).
+ * Slaytlar: "Kume_Bul_2", "Izleme: Kume_Bul_2(7)",
+ * "Izleme: Kume_Bul_2 (devam)". */
 #include <stdio.h>
 
 #define N 10   /* sunumda yok: "ata dizisi" slaytindaki boyut */
 int ata[N] = { -8, 0, 0, 2, 0, 4, 4, 6 };   /* sunumda yok: ornek agac */
 
-int Kume_bul_2(int i) {
+int Kume_Bul_2(int i) {
   int r, s;
   for (r = i; ata[r] >= 0; r = ata[r])
     ;                   /* kökü bul */
@@ -33,20 +33,20 @@ static void ata_yaz(void)
 
 int main(void)
 {
-    printf("Kume_bul_2(7) = %d\n", Kume_bul_2(7));
+    printf("Kume_Bul_2(7) = %d\n", Kume_Bul_2(7));
     ata_yaz();
-    printf("Kume_bul_2(7) = %d\n", Kume_bul_2(7));
+    printf("Kume_Bul_2(7) = %d\n", Kume_Bul_2(7));
     ata_yaz();
-    printf("Kume_bul_2(5) = %d\n", Kume_bul_2(5));
+    printf("Kume_Bul_2(5) = %d\n", Kume_Bul_2(5));
     ata_yaz();
     return 0;
 }
 
 /* Beklenen cikti:
- * Kume_bul_2(7) = 0
+ * Kume_Bul_2(7) = 0
  *   ata = -8 0 0 2 0 4 0 0
- * Kume_bul_2(7) = 0
+ * Kume_Bul_2(7) = 0
  *   ata = -8 0 0 2 0 4 0 0
- * Kume_bul_2(5) = 0
+ * Kume_Bul_2(5) = 0
  *   ata = -8 0 0 2 0 0 0 0
  */

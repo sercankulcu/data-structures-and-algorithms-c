@@ -21,8 +21,8 @@ void Birlesim_2(int i, int j) {
   }
 }
 
-/* sunumda yok: "Kume_bul_2" slaytindaki yol kisaltmali bulma */
-int Kume_bul_2(int i) {
+/* sunumda yok: "Kume_Bul_2" slaytindaki yol kisaltmali bulma */
+int Kume_Bul_2(int i) {
   int r, s;
   for (r = i; ata[r] >= 0; r = ata[r])
     ;                   /* kökü bul */
@@ -38,7 +38,7 @@ int bilesen_say(int n, int m, int u[], int v[]) {
   for (int i = 0; i < n; i++) ata[i] = -1;
   int sayi = n;               /* her düğüm ayrı */
   for (int e = 0; e < m; e++) {
-    int a = Kume_bul_2(u[e]), b = Kume_bul_2(v[e]);
+    int a = Kume_Bul_2(u[e]), b = Kume_Bul_2(v[e]);
     if (a != b) {             /* farklı bileşen */
       Birlesim_2(a, b);
       sayi--;
