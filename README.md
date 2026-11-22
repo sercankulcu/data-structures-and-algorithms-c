@@ -4,6 +4,8 @@ C code for the undergraduate **Data Structures and Algorithms with C (C ile Veri
 
 Course page, slides, lecture notes and the course book: <https://sercankulcu.github.io/teaching/data-structures-and-algorithms-with-c/>
 
+The same programs with English identifiers, comments and output, matching the English edition of the course, are in [data-structures-and-algorithms-c-en](https://github.com/sercankulcu/data-structures-and-algorithms-c-en).
+
 ## Chapters
 
 | Folder | Chapter | Programs |
